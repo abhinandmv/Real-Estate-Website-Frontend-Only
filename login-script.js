@@ -1,48 +1,62 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Tab switching logic
-    const tabs = document.querySelectorAll('.tab');
-    const forms = document.querySelectorAll('.auth-form');
-    
-    tabs.forEach(tab => {
-      tab.addEventListener('click', () => {
-        const targetForm = tab.getAttribute('data-tab');
-        
-        // Remove active class from all tabs and forms
-        tabs.forEach(t => t.classList.remove('active'));
-        forms.forEach(f => f.classList.remove('active'));
-        
-        // Add active class to current tab and form
-        tab.classList.add('active');
-        document.getElementById(`${targetForm}-form`).classList.add('active');
+  // Tab switching logic for login/signup forms
+  const tabs = document.querySelectorAll('.tab');
+  const forms = document.querySelectorAll('.auth-form');
+  
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      const targetForm = tab.getAttribute('data-tab');
+      
+      // Remove active class from all tabs and forms
+      tabs.forEach(t => t.classList.remove('active'));
+      forms.forEach(f => f.classList.remove('active'));
+      
+      // Add active class to current tab and form
+      tab.classList.add('active');
+      document.getElementById(`${targetForm}-form`).classList.add('active');
+    });
+  });
+
+  // Mobile menu toggle - must be added to login page too
+  const menuToggle = document.getElementById('menu-toggle');
+  const navLinks = document.getElementById('nav-links');
+  
+  if (menuToggle && navLinks) {
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+  }
+
+  if (navLinks) {
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
       });
     });
+  }
+
+  // Create error message element for login form
+  const loginForm = document.getElementById('login-form');
+  const loginErrorMsg = document.createElement('div');
+  loginErrorMsg.className = 'error-message';
+  loginErrorMsg.id = 'login-error';
+  loginForm.insertBefore(loginErrorMsg, loginForm.firstChild);
+
+  // Rest of login-script.js code continues...
   
-    // Create error message element for login form
-    const loginForm = document.getElementById('login-form');
-    const loginErrorMsg = document.createElement('div');
-    loginErrorMsg.className = 'error-message';
-    loginErrorMsg.id = 'login-error';
-    loginForm.insertBefore(loginErrorMsg, loginForm.firstChild);
-  
-    // Create success message element for login form
-    const loginSuccessMsg = document.createElement('div');
-    loginSuccessMsg.className = 'success-message';
-    loginSuccessMsg.id = 'login-success';
-    loginForm.insertBefore(loginSuccessMsg, loginForm.firstChild);
-  
-    // Create error message element for signup form
-    const signupForm = document.getElementById('signup-form');
-    const signupErrorMsg = document.createElement('div');
-    signupErrorMsg.className = 'error-message';
-    signupErrorMsg.id = 'signup-error';
-    signupForm.insertBefore(signupErrorMsg, signupForm.firstChild);
-  
-    // Create success message element for signup form
-    const signupSuccessMsg = document.createElement('div');
-    signupSuccessMsg.className = 'success-message';
-    signupSuccessMsg.id = 'signup-success';
-    signupForm.insertBefore(signupSuccessMsg, signupForm.firstChild);
-  
+  // Create success message element for login form
+  const loginSuccessMsg = document.createElement('div');
+  loginSuccessMsg.className = 'success-message';
+  loginSuccessMsg.id = 'login-success';
+  loginForm.insertBefore(loginSuccessMsg, loginForm.firstChild);
+
+  // Create error message element for signup form
+  const signupForm = document.getElementById('signup-form');
+  const signupErrorMsg = document.createElement('div');
+  signupErrorMsg.className = 'error-message';
+  signupErrorMsg.id = 'signup-error';
+  signupForm.insertBefore(signupErrorMsg, signupForm.firstChild);
+
     // Login form submission
     loginForm.addEventListener('submit', function(e) {
       e.preventDefault();

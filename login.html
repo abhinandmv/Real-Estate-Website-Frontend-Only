@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RealEstateHub</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="login-style.css">
+</head>
+<body>
+  <header>
+    <div class="container navbar">
+      <a href="index.html" class="logo">
+        <i class="fas fa-home"></i>RealEstateHub
+      </a>
+      <button class="menu-toggle" id="menu-toggle">
+        <i class="fas fa-bars"></i>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#properties">Properties</a></li>
+        <li><a href="index.html#about">About Us</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <section class="auth-container">
+    <div class="auth-box">
+      <div class="tabs">
+        <div class="tab active" data-tab="login">Login</div>
+        <div class="tab" data-tab="signup">Sign Up</div>
+      </div>
+      
+      <div class="form-container">
+        <!-- Login Form -->
+        <form id="login-form" class="auth-form active">
+          <h2>Welcome Back</h2>
+          <div class="form-group">
+            <label for="login-email">Email</label>
+            <input type="email" id="login-email" class="form-control" placeholder="Enter your email" required>
+          </div>
+          <div class="form-group">
+            <label for="login-password">Password</label>
+            <input type="password" id="login-password" class="form-control" placeholder="Enter your password" required>
+          </div>
+          <div class="form-options">
+            <div class="remember-me">
+              <input type="checkbox" id="remember" name="remember">
+              <label for="remember">Remember me</label>
+            </div>
+            <a href="#" class="forgot-password">Forgot Password?</a>
+          </div>
+          <button type="submit" class="btn-submit">Login</button>
+          <div class="social-login">
+            <p>Or login with</p>
+            <div class="social-buttons">
+              <button type="button" class="social-btn google">
+                <i class="fab fa-google"></i>
+              </button>
+              <button type="button" class="social-btn facebook">
+                <i class="fab fa-facebook-f"></i>
+              </button>
+            </div>
+          </div>
+        </form>
+
+        <!-- Signup Form -->
+        <form id="signup-form" class="auth-form">
+          <h2>Create an Account</h2>
+          <div class="form-group">
+            <label for="signup-name">Full Name</label>
+            <input type="text" id="signup-name" class="form-control" placeholder="Enter your full name" required>
+          </div>
+          <div class="form-group">
+            <label for="signup-email">Email</label>
+            <input type="email" id="signup-email" class="form-control" placeholder="Enter your email" required>
+          </div>
+          <div class="form-group">
+            <label for="signup-phone">Phone Number</label>
+            <input type="tel" id="signup-phone" class="form-control" placeholder="Enter your phone number" required>
+          </div>
+          <div class="form-group">
+            <label for="signup-password">Password</label>
+            <input type="password" id="signup-password" class="form-control" placeholder="Create a password" required>
+          </div>
+          <div class="form-group">
+            <label for="signup-confirm">Confirm Password</label>
+            <input type="password" id="signup-confirm" class="form-control" placeholder="Confirm your password" required>
+          </div>
+          <div class="terms-checkbox">
+            <input type="checkbox" id="terms" name="terms" required>
+            <label for="terms">I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a></label>
+          </div>
+          <button type="submit" class="btn-submit">Sign Up</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>RealEstateHub</h4>
+          <p>The premier destination for finding your dream property in India. We connect buyers and sellers to create perfect matches.</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#properties">Properties</a></li>
+            <li><a href="index.html#about">About Us</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Property Types</h4>
+          <ul>
+            <li><a href="#">Villas</a></li>
+            <li><a href="#">Apartments</a></li>
+            <li><a href="#">Cottages</a></li>
+            <li><a href="#">Penthouses</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Newsletter</h4>
+          <p>Subscribe to get updates on new properties and offers.</p>
+          <form>
+            <div class="form-group">
+              <input type="email" class="form-control" placeholder="Your Email" required>
+            </div>
+            <button type="submit" class="btn-submit" style="margin-top: 10px;">Subscribe</button>
+          </form>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>&copy; 2025 RealEstateHub. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+  <script src="script.js"></script>
+  <script src="login-script.js"></script>
+</body>
+</html>

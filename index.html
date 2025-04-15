@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RealEstateHub</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="container navbar">
+      <a href="#" class="logo">
+        <i class="fas fa-home"></i>RealEstateHub
+      </a>
+      <button class="menu-toggle" id="menu-toggle">
+        <i class="fas fa-bars"></i>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#properties">Properties</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li class="auth-links"><a href="login.html" class="btn-sm">Login / Sign Up</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Find Your Dream Home</h1>
+      <p>Discover the perfect property that suits your lifestyle and budget.</p>
+      <div class="hero-buttons">
+        <a href="#properties" class="btn btn-primary">Browse Properties</a>
+        <a href="#contact" class="btn btn-outline">Contact Us</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="search-container">
+        <form class="search-form">
+          <div class="form-group">
+            <label for="location">Location</label>
+            <input type="text" id="location" class="form-control" placeholder="City, Neighborhood...">
+          </div>
+          <div class="form-group">
+            <label for="property-type">Property Type</label>
+            <select id="property-type" class="form-control">
+              <option value="">All Types</option>
+              <option value="Villa">Villa</option>
+              <option value="Apartment">Apartment</option>
+              <option value="Cottage">Cottage</option>
+              <option value="Penthouse">Penthouse</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="price-range">Price Range</label>
+            <select id="price-range" class="form-control">
+              <option value="">Any Price</option>
+              <option value="0-500000">Under ₹50L</option>
+              <option value="500000-1000000">₹50L - ₹1Cr</option>
+              <option value="1000000-2000000">₹1Cr - ₹2Cr</option>
+              <option value="2000000+">Above ₹2Cr</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="bedrooms">Bedrooms</label>
+            <select id="bedrooms" class="form-control">
+              <option value="">Any</option>
+              <option value="1">1+</option>
+              <option value="2">2+</option>
+              <option value="3">3+</option>
+              <option value="4">4+</option>
+            </select>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="properties">
+    <div class="container">
+      <h2 class="section-title">Featured Properties</h2>
+      <div class="properties" id="property-list">
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="about">
+    <div class="container">
+      <h2 class="section-title">Why Choose Us</h2>
+      <div class="properties">
+        <div class="property-card">
+          <div style="text-align: center; padding: 2rem;">
+            <i class="fas fa-award" style="font-size: 3rem; color: var(--secondary); margin-bottom: 1rem;"></i>
+            <h3>Expert Advice</h3>
+            <p>Our team of experienced agents will guide you through every step of the buying or selling process.</p>
+          </div>
+        </div>
+        <div class="property-card">
+          <div style="text-align: center; padding: 2rem;">
+            <i class="fas fa-home" style="font-size: 3rem; color: var(--secondary); margin-bottom: 1rem;"></i>
+            <h3>Exclusive Listings</h3>
+            <p>Access to premium properties that you won't find anywhere else on the market.</p>
+          </div>
+        </div>
+        <div class="property-card">
+          <div style="text-align: center; padding: 2rem;">
+            <i class="fas fa-check-circle" style="font-size: 3rem; color: var(--secondary); margin-bottom: 1rem;"></i>
+            <h3>Verified Properties</h3>
+            <p>All our properties undergo thorough verification to ensure peace of mind for our clients.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section contact-section" id="contact">
+    <div class="container">
+      <h2 class="section-title">Get In Touch</h2>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <h3>We'd love to hear from you</h3>
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div class="contact-text">
+              <h4>Address</h4>
+              <p>New Delhi , India</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-phone"></i>
+            </div>
+            <div class="contact-text">
+              <h4>Phone</h4>
+              <p>+91 0000000000</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div class="contact-text">
+              <h4>Email</h4>
+              <p>info@realestatehub.com</p>
+            </div>
+          </div>
+        </div>
+        <div class="contact-form">
+          <h3>Send us a message</h3>
+          <form onsubmit="handleSubmit(event)">
+            <div class="form-group">
+              <input type="text" id="name" class="form-control" placeholder="Your Name" required>
+            </div>
+            <div class="form-group">
+              <input type="email" id="email" class="form-control" placeholder="Your Email" required>
+            </div>
+            <div class="form-group">
+              <input type="tel" id="phone" class="form-control" placeholder="Your Phone">
+            </div>
+            <div class="form-group">
+              <textarea id="message" class="form-control" rows="4" placeholder="Your Message" required></textarea>
+            </div>
+            <button type="submit" class="btn-submit">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>RealEstateHub</h4>
+          <p>The premier destination for finding your dream property in India. We connect buyers and sellers to create perfect matches.</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#properties">Properties</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Property Types</h4>
+          <ul>
+            <li><a href="#">Villas</a></li>
+            <li><a href="#">Apartments</a></li>
+            <li><a href="#">Cottages</a></li>
+            <li><a href="#">Penthouses</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Newsletter</h4>
+          <p>Subscribe to get updates on new properties and offers.</p>
+          <form>
+            <div class="form-group">
+              <input type="email" class="form-control" placeholder="Your Email" required>
+            </div>
+            <button type="submit" class="btn-submit" style="margin-top: 10px;">Subscribe</button>
+          </form>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>&copy; 2025 RealEstateHub. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

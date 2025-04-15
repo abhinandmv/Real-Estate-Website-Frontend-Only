@@ -59,5 +59,5 @@ link:- https://abhinandmv.github.io/Real-Estate-Website-Frontend-Only/
 - Enable image uploads and property submissions
 - Add form validations and animations
 
-📄 License
+## 📄 License
 This project is licensed under the MIT License.
